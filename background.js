@@ -11,6 +11,13 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if(data) {
 		// Set the details
 		chrome.pageAction[ data.state ? 'show' : 'hide'](selectedId);
+
+		// If we found qTip2, report it to the mothership
+		if(data.url) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "http://craigsworks.com/projects/qtip2/foundit", true);
+			xhr.send( data.url );
+		}
 	}
 
 	// Return nothing to let the connection be cleaned up.

@@ -22,7 +22,6 @@
 		"default_title": "qTip2 is present on this page!"
 	},
 	"permissions": [
-		"tabs",
-		"http://*.craigsworks.com/"
+		"tabs", "http://*.craigsworks.com/"
 	]
 }
